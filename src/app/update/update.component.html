@@ -1,0 +1,13 @@
+<div class="myForm" *ngIf="isLoaded">
+  <div class="header">
+      <h2>Create Employee Form</h2>
+  </div>
+  <form [formGroup]="updateForm">
+      <input type="text" placeholder="Name" formControlName="name" required>
+      <input type="number" placeholder="version" formControlName="version" required>
+      <input type="text" placeholder="language" formControlName="language" required>
+      <button type="button" (click)="onUpdate()">Update</button>
+      <a routerLink = "/dashboard">Go to Dashboard</a>
+      <p>{{message}}</p>
+  </form>
+</div>

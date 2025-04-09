@@ -1,0 +1,27 @@
+<form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+  <div class="name">
+    <label for="name" name="name">Name:</label>
+    <input type="text" formControlName="name" />
+    
+  </div>
+  <br />
+
+  <div class="language">
+    <label for="language" name="language">Language:</label>
+    <input type="text" formControlName="language" />
+    
+  </div>
+  <br>
+
+  <div class="version">
+    <label for="version" name="version">Version:</label>
+    <input type="number" formControlName="version" />
+  </div>
+  <button type="submit" [disabled]="reactiveForm.invalid"> Create</button>
+  <a routerLink = "/dashboard">Go to Dashboard</a>
+  <p>{{message}}</p>
+
+</form>
+<!--  -->
+
+

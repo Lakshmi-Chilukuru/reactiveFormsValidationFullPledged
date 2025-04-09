@@ -1,0 +1,17 @@
+<form [formGroup]="loginForm" (ngSubmit)="onLogin()" *ngIf ="visible">
+    <div class="name">
+      <label for="name" name="name">Name:</label>
+      <input type="text" formControlName="name" />
+      
+    </div>
+    <br />
+  
+    <div class="password">
+      <label for="password" name="password">Password:</label>
+      <input type="password" formControlName="password" />
+      
+    </div>
+    <button type="submit" [disabled]="loginForm.invalid"> Login</button>
+</form>
+
+<app-dashboard [show] = 'show'></app-dashboard>

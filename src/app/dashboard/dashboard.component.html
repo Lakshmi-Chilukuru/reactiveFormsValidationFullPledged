@@ -1,0 +1,33 @@
+
+
+<section *ngIf="show">
+  <section >
+    <h3>Dashboard</h3>
+    <div class="create">
+      <a routerLink="/create">Create</a>
+    </div>
+  </section>
+  <section>
+    <table border=1 >
+      <tr>
+        <th>Name</th>
+        <th>Language</th>
+        <th>Version</th>
+        <th>Actions</th>
+      </tr>
+      <tr *ngFor="let movie of movies">
+        <td>{{movie.name}}</td>
+        <td>{{movie.language}}</td>
+        <td>{{movie.version}}</td>
+        <td>
+      <a [routerLink]="['/view', movie.id]" >View</a>
+      <a [routerLink]="['/update', movie.id]" >Update</a>
+     
+      <button (click)="delete(movie.id)">Delete</button>
+  
+        </td>
+      </tr>
+    </table>
+    <div class="center">{{message}}</div>
+  </section>
+</section>
